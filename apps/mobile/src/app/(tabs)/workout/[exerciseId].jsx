@@ -26,7 +26,7 @@ import { EXERCISE_TYPES } from '@/types/index';
 import { createAnalyzer } from '@/services/pose/ExerciseAnalyzers';
 import { feedbackManager } from '@/services/FeedbackManager';
 import { audioManager } from '@/services/AudioManager';
-import { poseDetectionService } from '@/services/PoseDetectionService';
+// import { poseDetectionService } from '@/services/PoseDetectionService';
 import { sessionStorage } from '@/services/storage';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
@@ -119,8 +119,8 @@ export default function WorkoutScreen() {
       // Initialize audio
       await audioManager.initialize();
 
-      // Initialize pose detection
-      await poseDetectionService.initialize();
+      // Initialize pose detection (commented out due to TensorFlow dependency issues)
+      // await poseDetectionService.initialize();
       setIsModelLoading(false);
 
       // Create exercise analyzer
